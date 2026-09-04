@@ -8,7 +8,7 @@ app = Flask(__name__)
 # ============================================================
 
 # Depois vamos colocar aqui a URL do seu Google Apps Script
-GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz2rK0W-E3hwfmo-raL_lR9fN9SDYrgMld36QB5hU_wYxvCBsJU9P9PrV48tmfw4aFS9w/exec"
+GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxtpWbKoQ9w8TdkK0TK1MVFp3qD4X4fQU6V5ARTweWRsjqr9gsba8a3psSW-00j5tfRgQ/exec"
 
 
 # ============================================================

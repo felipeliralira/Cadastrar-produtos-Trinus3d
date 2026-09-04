@@ -1,13 +1,13 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, request
 import requests
 
 app = Flask(__name__)
+
 
 # ============================================================
 # CONFIGURAÇÃO DO GOOGLE PLANILHAS
 # ============================================================
 
-# Depois vamos colocar aqui a URL do seu Google Apps Script
 GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxtpWbKoQ9w8TdkK0TK1MVFp3qD4X4fQU6V5ARTweWRsjqr9gsba8a3psSW-00j5tfRgQ/exec"
 
 
@@ -37,8 +37,22 @@ def exibirFormulario():
 def criarCadastro():
 
     try:
-        # Recebe os dados enviados pelo formulário
-        destino = request.form.get("destino", "").strip()
+
+        # ========================================================
+        # RECEBE OS DESTINOS SELECIONADOS
+        # ========================================================
+
+        # Agora pode receber vários destinos
+        destinos = request.form.getlist("destinos")
+
+        # Remove espaços desnecessários
+        destinos = [destino.strip() for destino in destinos]
+
+
+        # ========================================================
+        # RECEBE OS DADOS DO PRODUTO
+        # ========================================================
+
         nome = request.form.get("nome", "").strip()
         custo_adc = request.form.get("custo_adc", "").strip()
         custo = request.form.get("custo", "").strip()
@@ -46,17 +60,50 @@ def criarCadastro():
         varejo = request.form.get("varejo", "").strip()
         pedido_minimo = request.form.get("pedido_minimo", "").strip()
 
-        # Verifica se o destino foi selecionado
-        if not destino:
-            return "Erro: selecione onde o produto será cadastrado."
 
-        # Verifica se o nome foi preenchido
+        # ========================================================
+        # ABAS PERMITIDAS
+        # ========================================================
+
+        abas_permitidas = [
+            "Produtos All",
+            "Shopee/TikTok",
+            "Mercado Livre/ Site"
+        ]
+
+
+        # ========================================================
+        # VERIFICA SE PELO MENOS UMA ABA FOI SELECIONADA
+        # ========================================================
+
+        if not destinos:
+            return "Erro: selecione pelo menos um local para cadastrar o produto."
+
+
+        # ========================================================
+        # VERIFICA SE OS DESTINOS SÃO VÁLIDOS
+        # ========================================================
+
+        for destino in destinos:
+
+            if destino not in abas_permitidas:
+                return f"Erro: destino inválido: {destino}"
+
+
+        # ========================================================
+        # VERIFICA O NOME
+        # ========================================================
+
         if not nome:
             return "Erro: o nome do produto é obrigatório."
 
-        # Dados que serão enviados para o Google Planilhas
+
+        # ========================================================
+        # DADOS QUE SERÃO ENVIADOS PARA O GOOGLE PLANILHAS
+        # ========================================================
+
         dados = {
-            "destino": destino,
+            "destinos": destinos,
             "nome": nome,
             "custo_adc": custo_adc,
             "custo": custo,
@@ -65,27 +112,51 @@ def criarCadastro():
             "pedido_minimo": pedido_minimo
         }
 
-        # Envia os dados para o Google Apps Script
+
+        # ========================================================
+        # ENVIA OS DADOS PARA O GOOGLE APPS SCRIPT
+        # ========================================================
+
         resposta = requests.post(
             GOOGLE_SCRIPT_URL,
             json=dados,
             timeout=10
         )
 
-        # Verifica resposta do Google
+
+        # ========================================================
+        # VERIFICA RESPOSTA DO GOOGLE
+        # ========================================================
+
         if resposta.status_code != 200:
             return f"Erro ao enviar para o Google Planilhas: {resposta.text}"
 
-        # Página de sucesso
+
+        # ========================================================
+        # PÁGINA DE SUCESSO
+        # ========================================================
+
         return render_template(
             "sucesso.html",
             nome_produto=nome
         )
 
+
+    # ============================================================
+    # ERRO DE CONEXÃO
+    # ============================================================
+
     except requests.exceptions.RequestException as err:
+
         return f"Erro de conexão com o Google Planilhas: {err}"
 
+
+    # ============================================================
+    # OUTROS ERROS
+    # ============================================================
+
     except Exception as err:
+
         return f"Erro ao cadastrar produto: {err}"
 
 

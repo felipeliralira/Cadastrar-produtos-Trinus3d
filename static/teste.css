@@ -1,5 +1,10 @@
 /* Importando uma fonte moderna do Google Fonts */
-@import url('https://googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* ============================================================
+   CONFIGURAÇÕES GERAIS
+   ============================================================ */
 
 * {
     margin: 0;
@@ -8,7 +13,11 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Fundo com degradê moderno, chamativo mas suave */
+
+/* ============================================================
+   FUNDO
+   ============================================================ */
+
 body {
     background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
     min-height: 100vh;
@@ -18,13 +27,22 @@ body {
     color: #f1f5f9;
 }
 
+
+/* ============================================================
+   PAINEL PRINCIPAL
+   ============================================================ */
+
 .panel-wrapper {
     width: 100%;
     max-width: 480px;
     padding: 20px;
 }
 
-/* Card centralizado */
+
+/* ============================================================
+   CARD CENTRALIZADO
+   ============================================================ */
+
 .container {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -35,10 +53,16 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
+
 .header-icon {
     font-size: 3.5rem;
     margin-bottom: 15px;
 }
+
+
+/* ============================================================
+   TÍTULOS
+   ============================================================ */
 
 h1 {
     font-size: 2rem;
@@ -51,6 +75,7 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
+
 p {
     color: #94a3b8;
     font-size: 1rem;
@@ -58,14 +83,18 @@ p {
     font-weight: 400;
 }
 
-/* Grupo de botões empilhados verticalmente para melhor usabilidade */
+
+/* ============================================================
+   GRUPO DE BOTÕES
+   ============================================================ */
+
 .button-group {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Estilo base dos botões */
+
 .button-group a {
     display: flex;
     align-items: center;
@@ -79,12 +108,17 @@ p {
     transition: all 0.25s ease;
 }
 
-/* Botão Formulário - Azul Vivo */
+
+/* ============================================================
+   BOTÃO FORMULÁRIO
+   ============================================================ */
+
 .btn-add {
     background-color: #0284c7;
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
 }
+
 
 .btn-add:hover {
     background-color: #0369a1;
@@ -92,12 +126,17 @@ p {
     box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
 }
 
-/* Botão Gerenciar - Teal/Verde Água */
+
+/* ============================================================
+   BOTÃO GERENCIAR
+   ============================================================ */
+
 .btn-remove {
     background-color: #0f766e;
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
 }
+
 
 .btn-remove:hover {
     background-color: #115e59;
@@ -105,11 +144,17 @@ p {
     box-shadow: 0 6px 20px rgba(15, 118, 110, 0.4);
 }
 
+
+/* ============================================================
+   BOTÃO INFORMAÇÕES
+   ============================================================ */
+
 .btn-info {
     background-color: #FF7F7F;
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
 }
+
 
 .btn-info:hover {
     background-color: #FF0000;
@@ -117,49 +162,72 @@ p {
     box-shadow: 0 6px 20px rgba(15, 118, 110, 0.4);
 }
 
-/* Animação suave ao carregar a página */
+
+/* ============================================================
+   ANIMAÇÃO
+   ============================================================ */
+
 @keyframes fadeIn {
+
     from {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
+
 
 .animate-fade-in {
     animation: fadeIn 0.5s ease forwards;
 }
 
-/*Cadastro.html */
 
-/* --- ESTILOS ADICIONAIS PARA O FORMULÁRIO --- */
+/* ============================================================
+   CADASTRO DE PRODUTO
+   ============================================================ */
 
 .form-wrapper {
     width: 100%;
-    max-width: 580px; /* Formulário um pouco mais largo para melhor disposição */
+    max-width: 800px;
     padding: 20px;
 }
+
+
+/* ============================================================
+   NAVEGAÇÃO
+   ============================================================ */
 
 .header-navigation {
     text-align: left;
     margin-bottom: 20px;
 }
 
+
+.btn-back {
+    text-decoration: none;
+}
+
+
 .btn-back:hover {
     color: #7dd3fc;
     text-decoration: underline;
 }
-.btn-back{
-    text-decoration: none;
-}
+
+
+/* ============================================================
+   FORMULÁRIO
+   ============================================================ */
 
 form {
     text-align: left;
     margin-top: 25px;
 }
+
 
 .form-group {
     margin-bottom: 20px;
@@ -168,15 +236,23 @@ form {
     gap: 8px;
 }
 
-/* Permite colocar dois campos lado a lado em telas maiores */
+
+/* Campos lado a lado */
+
 .form-row {
     display: flex;
     gap: 20px;
 }
 
+
 .form-row .form-group {
     flex: 1;
 }
+
+
+/* ============================================================
+   LABELS
+   ============================================================ */
 
 label {
     font-size: 0.85rem;
@@ -186,7 +262,11 @@ label {
     color: #94a3b8;
 }
 
-/* Inputs de texto, número e seletores integrados ao Dark Mode */
+
+/* ============================================================
+   INPUTS
+   ============================================================ */
+
 input[type="text"],
 input[type="number"],
 select {
@@ -201,7 +281,7 @@ select {
     outline: none;
 }
 
-/* Efeito de foco quando o usuário clica no campo */
+
 input:focus,
 select:focus {
     border-color: #38bdf8;
@@ -209,149 +289,361 @@ select:focus {
     box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
 }
 
-/* Ajuste das cores internas das opções do select */
+
 select option {
     background: #1e1b4b;
     color: #ffffff;
 }
 
-/* Botão de Envio do Formulário (Azul Degradê Vivo) */
+
+/* ============================================================
+   SELEÇÃO DE DESTINOS
+   ============================================================ */
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+}
+
+
+.checkbox-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    min-height: 58px;
+
+    padding: 0 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+
+.checkbox-option:hover {
+    border-color: #38bdf8;
+    background: rgba(56, 189, 248, 0.08);
+}
+
+
+/* Checkbox */
+
+.checkbox-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+
+    margin: 0;
+
+    accent-color: #2196f3;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+
+/* Texto do checkbox */
+
+.checkbox-option span {
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    color: #94a3b8;
+
+    white-space: nowrap;
+}
+
+
+/* Checkbox selecionado */
+
+.checkbox-option:has(input:checked) {
+    border-color: #38bdf8;
+
+    background: rgba(56, 189, 248, 0.10);
+
+    box-shadow:
+        0 0 0 1px rgba(56, 189, 248, 0.2);
+}
+
+
+.checkbox-option:has(input:checked) span {
+    color: #ffffff;
+}
+
+
+/* ============================================================
+   BOTÃO SALVAR
+   ============================================================ */
+
 .btn-submit {
     width: 100%;
+
     padding: 16px;
+
     margin-top: 10px;
-    background: linear-gradient(135deg, #0284c7 0%, #3b82f6 100%);
+
+    background: linear-gradient(
+        135deg,
+        #0284c7 0%,
+        #3b82f6 100%
+    );
+
     color: #ffffff;
+
     border: none;
+
     border-radius: 12px;
+
     font-size: 1.05rem;
+
     font-weight: 600;
+
     cursor: pointer;
+
     transition: all 0.25s ease;
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+
+    box-shadow:
+        0 4px 12px rgba(2, 132, 199, 0.3);
 }
+
 
 .btn-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+
+    box-shadow:
+        0 6px 20px rgba(2, 132, 199, 0.5);
+
     filter: brightness(1.1);
 }
 
-/* Responsividade para telas menores de celular */
-@media (max-width: 480px) {
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-}
 
-
-/*Tabela.html/*
-
-/* --- ESTILOS ADICIONAIS PARA A TABELA --- */
+/* ============================================================
+   TABELA.HTML
+   ============================================================ */
 
 .table-wrapper {
     width: 100%;
-    max-width: 1100px; /* Mais largo para acomodar todas as colunas confortavelmente */
+    max-width: 1100px;
     padding: 20px;
 }
 
+
 .responsive-table-container {
     width: 100%;
-    overflow-x: auto; /* Cria barra de rolagem lateral se faltar espaço */
+    overflow-x: auto;
+
     margin-top: 25px;
+
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilização da Tabela */
+
+/* ============================================================
+   TABELA
+   ============================================================ */
+
 .tabela-clientes {
     width: 100%;
+
     border-collapse: collapse;
+
     text-align: left;
+
     background: rgba(255, 255, 255, 0.02);
+
     font-size: 0.95rem;
 }
 
-/* Cabeçalho da Tabela */
+
+/* Cabeçalho */
+
 .tabela-clientes th {
     background-color: rgba(255, 255, 255, 0.07);
+
     color: #38bdf8;
+
     padding: 16px;
+
     font-weight: 600;
+
     text-transform: uppercase;
+
     font-size: 0.8rem;
+
     letter-spacing: 0.5px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+
+    border-bottom:
+        2px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Linhas e Células da Tabela */
+
+/* Células */
+
 .tabela-clientes td {
     padding: 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.05);
+
     color: #e2e8f0;
 }
 
-/* Efeito visual ao passar o mouse por cima de uma linha */
+
+/* Hover */
+
 .tabela-clientes tbody tr:hover {
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color:
+        rgba(255, 255, 255, 0.04);
 }
 
-/* Alinhamento de colunas específicas */
+
+/* ============================================================
+   ALINHAMENTO
+   ============================================================ */
+
 .texto-centro {
     text-align: center;
 }
+
 
 .font-bold {
     font-weight: 600;
     color: #ffffff;
 }
 
-/* Etiquetas (Badges) visuais */
+
+/* ============================================================
+   BADGES
+   ============================================================ */
+
 .badge-turma {
     background: rgba(129, 140, 248, 0.2);
+
     color: #a5b4fc;
+
     padding: 4px 10px;
+
     border-radius: 6px;
+
     font-size: 0.85rem;
+
     font-weight: 500;
 }
+
 
 .badge-status {
     padding: 4px 10px;
+
     border-radius: 6px;
+
     font-size: 0.85rem;
+
     font-weight: 600;
 }
 
+
 .badge-status.sim {
     background: rgba(16, 185, 129, 0.15);
+
     color: #34d399;
 }
 
+
 .badge-status.nao {
     background: rgba(239, 68, 68, 0.15);
+
     color: #f87171;
 }
 
-/* Botão Excluir Vermelho Elegante */
+
+/* ============================================================
+   BOTÃO EXCLUIR
+   ============================================================ */
+
 .btn-excluir {
     display: inline-block;
-    background-color: rgba(220, 38, 38, 0.15);
+
+    background-color:
+        rgba(220, 38, 38, 0.15);
+
     color: #f87171;
+
     padding: 8px 14px;
+
     border-radius: 8px;
+
     text-decoration: none;
+
     font-size: 0.85rem;
+
     font-weight: 500;
-    border: 1px solid rgba(220, 38, 38, 0.3);
+
+    border:
+        1px solid rgba(220, 38, 38, 0.3);
+
     transition: all 0.2s ease;
 }
 
+
 .btn-excluir:hover {
     background-color: #dc2626;
+
     color: #ffffff;
+
     border-color: #dc2626;
-    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+
+    box-shadow:
+        0 4px 12px rgba(220, 38, 38, 0.3);
+
     transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+
+    .form-wrapper {
+        max-width: 100%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-wrapper {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 30px 20px;
+    }
+
 }

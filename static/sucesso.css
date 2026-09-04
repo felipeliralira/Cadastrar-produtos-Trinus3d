@@ -1,0 +1,65 @@
+body {
+    background-color: #111827;
+    color: #f3f4f6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+.container {
+    width: 100%;
+    max-width: 450px;
+    background-color: #1f2937;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-align: center;
+}
+.success-icon {
+    font-size: 50px;
+    color: #10b981;
+    margin-bottom: 20px;
+}
+h2 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 24px;
+}
+p {
+    color: #9ca3af;
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.btn {
+    display: block;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+.btn-primary {
+    background-color: #38bdf8;
+    color: #111827;
+}
+.btn-primary:hover {
+    background-color: #0ea5e9;
+}
+.btn-secondary {
+    background-color: #374151;
+    color: #f3f4f6;
+    border: 1px solid #4b5563;
+}
+.btn-secondary:hover {
+    background-color: #4b5563;
+}

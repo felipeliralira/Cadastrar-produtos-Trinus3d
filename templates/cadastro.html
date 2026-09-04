@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='teste.css') }}">
+</head>
+<body>
+    <div class="form-wrapper">
+        <div class="container animate-fade-in">
+            <div class="header-navigation">
+                <a href="/" class="btn-back">⬅ Voltar ao Painel</a>
+            </div>
+            
+            <h1>Cadastro de produto</h1>
+            <p>Preencha os dados abaixo para registrar o produto.</p>
+
+            <form action="/cadastrar" method="POST">
+                <div class="form-group">
+                    <label for="destino">Onde cadastrar?</label>
+                    <select name="destino" id="destino" required>
+                        <option value="">Selecione...</option>
+                        <option value="Produtos All">Produtos All</option>
+                        <option value="Shopee/TikTok">Shopee/TikTok</option>
+                        <option value="Mercado Livre/ Site">Mercado Livre/ Site</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="a_nome">Nome</label>
+                    <input type="text" name="nome" id="a_nome" placeholder="Ex: Caixa do suco" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="a_custo_adc">Custo Adicional</label>
+                    <input type="text" name="custo_adc" id="a_custo_adc" placeholder="Ex: 0,00">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="a_custo">Custo</label>
+                        <input type="text" name="custo" id="a_custo" placeholder="Ex: 1,60" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="a_atacado">Atacado</label>
+                        <input type="text" name="atacado" id="a_atacado" placeholder="Ex: 4,50" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="a_varejo">Varejo</label>
+                        <input type="text" name="varejo" id="a_varejo" placeholder="Ex: 6,90" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="a_pedido_minimo">Pedido Mínimo</label>
+                        <input type="text" name="pedido_minimo" id="a_pedido_minimo" placeholder="Ex: 44,00" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">✨ Salvar Cadastro</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

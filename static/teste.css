@@ -1,0 +1,357 @@
+/* Importando uma fonte moderna do Google Fonts */
+@import url('https://googleapis.com');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Fundo com degradê moderno, chamativo mas suave */
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f1f5f9;
+}
+
+.panel-wrapper {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+}
+
+/* Card centralizado */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.header-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    color: #94a3b8;
+    font-size: 1rem;
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+/* Grupo de botões empilhados verticalmente para melhor usabilidade */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo base dos botões */
+.button-group a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+}
+
+/* Botão Formulário - Azul Vivo */
+.btn-add {
+    background-color: #0284c7;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.btn-add:hover {
+    background-color: #0369a1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+}
+
+/* Botão Gerenciar - Teal/Verde Água */
+.btn-remove {
+    background-color: #0f766e;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+}
+
+.btn-remove:hover {
+    background-color: #115e59;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 118, 110, 0.4);
+}
+
+.btn-info {
+    background-color: #FF7F7F;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.btn-info:hover {
+    background-color: #FF0000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 118, 110, 0.4);
+}
+
+/* Animação suave ao carregar a página */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/*Cadastro.html */
+
+/* --- ESTILOS ADICIONAIS PARA O FORMULÁRIO --- */
+
+.form-wrapper {
+    width: 100%;
+    max-width: 580px; /* Formulário um pouco mais largo para melhor disposição */
+    padding: 20px;
+}
+
+.header-navigation {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.btn-back:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+.btn-back{
+    text-decoration: none;
+}
+
+form {
+    text-align: left;
+    margin-top: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Permite colocar dois campos lado a lado em telas maiores */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #94a3b8;
+}
+
+/* Inputs de texto, número e seletores integrados ao Dark Mode */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+/* Efeito de foco quando o usuário clica no campo */
+input:focus,
+select:focus {
+    border-color: #38bdf8;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+/* Ajuste das cores internas das opções do select */
+select option {
+    background: #1e1b4b;
+    color: #ffffff;
+}
+
+/* Botão de Envio do Formulário (Azul Degradê Vivo) */
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #0284c7 0%, #3b82f6 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+    filter: brightness(1.1);
+}
+
+/* Responsividade para telas menores de celular */
+@media (max-width: 480px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+
+/*Tabela.html/*
+
+/* --- ESTILOS ADICIONAIS PARA A TABELA --- */
+
+.table-wrapper {
+    width: 100%;
+    max-width: 1100px; /* Mais largo para acomodar todas as colunas confortavelmente */
+    padding: 20px;
+}
+
+.responsive-table-container {
+    width: 100%;
+    overflow-x: auto; /* Cria barra de rolagem lateral se faltar espaço */
+    margin-top: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilização da Tabela */
+.tabela-clientes {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 0.95rem;
+}
+
+/* Cabeçalho da Tabela */
+.tabela-clientes th {
+    background-color: rgba(255, 255, 255, 0.07);
+    color: #38bdf8;
+    padding: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Linhas e Células da Tabela */
+.tabela-clientes td {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+}
+
+/* Efeito visual ao passar o mouse por cima de uma linha */
+.tabela-clientes tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Alinhamento de colunas específicas */
+.texto-centro {
+    text-align: center;
+}
+
+.font-bold {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Etiquetas (Badges) visuais */
+.badge-turma {
+    background: rgba(129, 140, 248, 0.2);
+    color: #a5b4fc;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.badge-status {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badge-status.sim {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+}
+
+.badge-status.nao {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+}
+
+/* Botão Excluir Vermelho Elegante */
+.btn-excluir {
+    display: inline-block;
+    background-color: rgba(220, 38, 38, 0.15);
+    color: #f87171;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    transition: all 0.2s ease;
+}
+
+.btn-excluir:hover {
+    background-color: #dc2626;
+    color: #ffffff;
+    border-color: #dc2626;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+    transform: translateY(-1px);
+}

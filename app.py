@@ -8,7 +8,7 @@ app = Flask(__name__)
 # CONFIGURAÇÃO DO GOOGLE PLANILHAS
 # ============================================================
 
-GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxtpWbKoQ9w8TdkK0TK1MVFp3qD4X4fQU6V5ARTweWRsjqr9gsba8a3psSW-00j5tfRgQ/exec"
+GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyunPOLlqG6rd3SggPT8G5FM1vmsYMJBHdi-mrKtIdmfFT5MHPHy3SAckve8VfnTHoImg/exec"
 
 
 # ============================================================
